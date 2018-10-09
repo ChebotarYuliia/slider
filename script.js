@@ -1,6 +1,6 @@
 const slides = document.querySelectorAll('.slide'),
-      arrowPrev = document.querySelector('.prev'),
-      arrowNext = document.querySelector('.next'),
+      arrowPrev = document.querySelector('#prev'),
+      arrowNext = document.querySelector('#next'),
       dots = document.querySelectorAll('.dot');
 
 let current = 0;
@@ -8,6 +8,7 @@ let current = 0;
 const reset = () => {
     for( let i = 0; i < slides.length; i++){
         slides[i].style.display = 'none';
+        dots[i].classList.remove('current');
     }
 };
 
@@ -20,20 +21,35 @@ const initSlider = () => {
         }
     }
     slides[current].style.display = 'block';
-}
+    dots[current].classList.add('current');
+};
 
 const toPrevSlide = () => {
     reset();
-    if(current === 0){
+    slides[current - 1].style.display = 'block';
+    dots[current - 1].classList.add('current');
+    current --;
+};
+
+arrowPrev.addEventListener('click', function() {
+    if( current === 0 ){
         current = slides.length;
     }
-    slides[current - 1].style.display = 'block';
-    current --;
-}
+    toPrevSlide();
+});
 
-const toNextSlider = () => {
+const toNextSlide = () => {
     reset();
-    
-}
+    slides[current + 1].style.display = 'block';
+    dots[current + 1].classList.add('current');
+    current ++;
+};
+
+arrowNext.addEventListener('click', function() {
+    if( current === slides.length - 1){
+        current = -1;
+    }
+    toNextSlide();
+});
 
 initSlider();
