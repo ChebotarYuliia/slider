@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider{
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            margin: 0 auto;
+        }
+        .slide{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .slide p{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .slide > img {
+            object-fit: cover;
+            width: 100%;
+            height: inherit;
+        }
+        #prev{
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            color: #fff;
+            font-size: 20px;
+            transition: .5s;
+            cursor: pointer;
+            padding: 10px 5px;
+            border-radius: 20px;
+            background: #b9b9b9;
+        }
+        #next{
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            color: #fff;
+            font-size: 20px;
+            transition: .5s;
+            cursor: pointer;
+            padding: 10px 5px;
+            border-radius: 20px;
+            background: #b9b9b9;
+        }
+        .dots{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: block;
+            background: #5a5a5a;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .dot.current, .dot:hover{
+            background: #292929;
+        }
+        .fade{
+            animation: fade .6s;
+        }
+        @keyframes fade {
+            from{
+                opacity: .5;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slide fade current">
+            <p>1/3</p>
+            <img src="http://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp" alt="" style="width: 100%">
+        </div>
+        <div class="slide fade">
+            <p>2/3</p>
+            <img src="https://cdn-images-1.medium.com/max/1600/1*U18aWqq2322t8Z26zZ0SIg.jpeg" alt="" style="width: 100%">
+        </div>
+        <div class="slide fade">
+            <p>3/3</p>
+            <img src="http://t.wallpaperweb.org/wallpaper/nature/1600x900/canadanaturecornerwallpaper10144_1600x900.jpg" alt="" style="width: 100%">
+        </div>
+        <a id="prev">&#10094</a>
+        <a id="next">&#10095</a>
+    </div>
+    <div class="dots" style="text-align: center">
+        <span class="dot current"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
