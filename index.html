@@ -10,14 +10,15 @@
             position: relative;
             width: 100%;
             height: 90vh;
-            margin: 0 auto;
+            margin: 0 auto 50px;
         }
         .slide{
             position: relative;
             width: 100%;
             height: 100%;
+            display: inline-block;
         }
-        .slide p{
+        .nature-slide p{
             position: absolute;
             bottom: 20px;
             right: 20px;
@@ -25,34 +26,33 @@
             font-weight: bold;
             font-size: 18px;
         }
-        .slide > img {
+        .nature-slide > img {
             object-fit: cover;
             width: 100%;
             height: inherit;
         }
-        #prev{
+        .arrow {
+            color: #fff;
+            font-size: 12px;
+            transition: .5s;
+            width: 50px;
+            text-align: center;
+            cursor: pointer;
+            padding: 5px 0;
+            border-radius: 5px;
+            background: #b9b9b9;
+            border: 0;
+            box-shadow: none;
             position: absolute;
+            z-index: 100;
+        }
+        .prev{
             top: 50%;
             left: 30px;
-            color: #fff;
-            font-size: 20px;
-            transition: .5s;
-            cursor: pointer;
-            padding: 10px 5px;
-            border-radius: 20px;
-            background: #b9b9b9;
         }
-        #next{
-            position: absolute;
+        .next{
             top: 50%;
             right: 30px;
-            color: #fff;
-            font-size: 20px;
-            transition: .5s;
-            cursor: pointer;
-            padding: 10px 5px;
-            border-radius: 20px;
-            background: #b9b9b9;
         }
         .dots{
             display: flex;
@@ -85,26 +85,46 @@
     </style>
 </head>
 <body>
-    <div class="slider">
-        <div class="slide fade current">
+    <div id="slider">
+        <div class="nature-slide fade">
             <p>1/3</p>
             <img src="http://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp" alt="" style="width: 100%">
         </div>
-        <div class="slide fade">
+        <div class="nature-slide fade">
             <p>2/3</p>
             <img src="https://cdn-images-1.medium.com/max/1600/1*U18aWqq2322t8Z26zZ0SIg.jpeg" alt="" style="width: 100%">
         </div>
-        <div class="slide fade">
+        <div class="nature-slide fade">
             <p>3/3</p>
             <img src="http://t.wallpaperweb.org/wallpaper/nature/1600x900/canadanaturecornerwallpaper10144_1600x900.jpg" alt="" style="width: 100%">
         </div>
-        <a id="prev">&#10094</a>
-        <a id="next">&#10095</a>
     </div>
-    <div class="dots" style="text-align: center">
-        <span class="dot current"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+
+    <div id="slider-1">
+        <div class="nature-slide fade">
+            <p>1/6</p>
+            <img src="http://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp" alt="" style="width: 100%">
+        </div>
+        <div class="nature-slide fade">
+            <p>2/6</p>
+            <img src="https://cdn-images-1.medium.com/max/1600/1*U18aWqq2322t8Z26zZ0SIg.jpeg" alt="" style="width: 100%">
+        </div>
+        <div class="nature-slide fade">
+            <p>3/6</p>
+            <img src="http://t.wallpaperweb.org/wallpaper/nature/1600x900/canadanaturecornerwallpaper10144_1600x900.jpg" alt="" style="width: 100%">
+        </div>
+        <div class="nature-slide fade">
+            <p>4/6</p>
+            <img src="http://croatia.hr/sites/default/files/styles/image_full_width/public/2017-08/02_01_slide_nature.jpg?itok=ItAHmLlp" alt="" style="width: 100%">
+        </div>
+        <div class="nature-slide fade">
+            <p>5/6</p>
+            <img src="https://cdn-images-1.medium.com/max/1600/1*U18aWqq2322t8Z26zZ0SIg.jpeg" alt="" style="width: 100%">
+        </div>
+        <div class="nature-slide fade">
+            <p>6/6</p>
+            <img src="http://t.wallpaperweb.org/wallpaper/nature/1600x900/canadanaturecornerwallpaper10144_1600x900.jpg" alt="" style="width: 100%">
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>
