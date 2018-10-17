@@ -80,6 +80,7 @@ function Slider (name) {
 
     const dots = elem.querySelector('.dots').children;
 
+    
     // FADE EFFECT
 
     if (options.fade === true) {
